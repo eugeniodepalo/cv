@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import styled from 'styled-components';
 import { incrementCount, decrementCount } from '../actions'
-import Layout from '../../../lib/components/Layout'
+import Layout from 'cv/components/Layout'
 
 const Button = styled.button<any>`
   background-color: ${props => props.count >= 0 ? 'green' : 'red'}

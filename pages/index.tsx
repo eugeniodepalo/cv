@@ -1,4 +1,4 @@
-import createContainer from '../lib/createContainer'
+import createContainer from 'cv/createContainer'
 import createStore from './index/createStore';
 import Page from './index/components/Page'
 

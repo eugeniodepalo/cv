@@ -1,4 +1,4 @@
-import baseCreateStore from '../../lib/createStore';
+import baseCreateStore from 'cv/createStore';
 import { types as actionTypes } from './actions';
 import { handleIncrementCount, handleDecrementCount } from './handlers';
 
