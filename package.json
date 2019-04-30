@@ -16,9 +16,13 @@
     "@types/next": "^8.0.4",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.8",
     "@zeit/next-typescript": "^1.1.1",
     "next": "^8.1.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

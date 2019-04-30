@@ -1,14 +1,23 @@
-import Head from 'next/head';
+import { Component } from 'react'
+import { Provider } from 'react-redux'
+import createStore from './index/createStore'
+import IndexPage from './index/page'
 
-function Index() {
-  return (
-    <div>
-      <Head>
-        <title>Eugenio Depalo - CV</title>
-      </Head>
-    </div>
-  )
-  return <div>Welcome to Next.js!</div>;
+export default class IndexContainer extends Component<any, any> {
+  static async getInitialProps() {
+    return { initialState: createStore().getState() }
+  }
+
+  constructor(props: any) {
+    super(props)
+    this.state = { store: createStore(props.initialState) }
+  }
+
+  render() {
+    return (
+      <Provider store={this.state.store}>
+        <IndexPage />
+      </Provider>
+    )
+  }
 }
-
-export default Index;
