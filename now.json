@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "cv",
+  "builds": [
+    { "src": "package.json", "use": "@now/next" }
+  ]
+}

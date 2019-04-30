@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "now-build": "yarn build"
   },
   "dependencies": {
     "@types/next": "^8.0.4",
