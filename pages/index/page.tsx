@@ -1,7 +1,12 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
 import { connect } from 'react-redux'
+import styled from 'styled-components';
 import { incrementCount, decrementCount } from './actions'
+
+const Button = styled.button<any>`
+  background-color: ${props => props.count >= 0 ? 'green' : 'red'}
+`
 
 const Page = ({ count, incrementCount, decrementCount }: any) => {
   return (
@@ -11,8 +16,8 @@ const Page = ({ count, incrementCount, decrementCount }: any) => {
       </Head>
 
       <span>Current count: {count}</span>
-      <button onClick={incrementCount}>Increment</button>
-      <button onClick={decrementCount}>Decrement</button>
+      <Button onClick={incrementCount} count={count}>Increment</Button>
+      <Button onClick={decrementCount} count={count}>Decrement</Button>
     </Fragment>
   )
 }
