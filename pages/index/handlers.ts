@@ -1,12 +1,12 @@
 import update from 'immutability-helper'
 
-export const handleIncrementCount = (state: any) => {
+export const incrementCount = (state: any) => {
   return update(state, {
     count: { $set: state.count + 1 }
   })
 }
 
-export const handleDecrementCount = (state: any) => {
+export const decrementCount = (state: any) => {
   return update(state, {
     count: { $set: state.count - 1 }
   })
