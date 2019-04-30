@@ -2,7 +2,7 @@ import { Reset } from 'styled-reset'
 import NextApp, { Container } from 'next/app'
 
 export default class App extends NextApp {
-  render () {
+  render() {
     const { Component, pageProps } = this.props
 
     return (

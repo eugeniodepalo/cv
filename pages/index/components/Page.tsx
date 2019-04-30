@@ -1,18 +1,23 @@
 import { connect } from 'react-redux'
-import styled from 'styled-components';
-import { incrementCount, decrementCount } from '../actions'
+import styled from 'styled-components'
 import Layout from 'cv/components/Layout'
+import { incrementCount, decrementCount } from '../actions'
 
+// eslint-disable-next-line no-undef
 const Button = styled.button<any>`
-  background-color: ${props => props.count >= 0 ? 'green' : 'red'}
+  background-color: ${({ count }: any) => (count >= 0 ? 'green' : 'red')};
 `
 
-const Page = ({ count, incrementCount, decrementCount }: any) => {
+const Page = ({ count, ...actions }: any) => {
   return (
     <Layout title="CV">
-      <span>Current count: {count}</span>
-      <Button onClick={incrementCount} count={count}>Increment</Button>
-      <Button onClick={decrementCount} count={count}>Decrement</Button>
+      <p>Current count: {count}</p>
+      <Button onClick={actions.incrementCount} count={count}>
+        Increment
+      </Button>
+      <Button onClick={actions.decrementCount} count={count}>
+        Decrement
+      </Button>
     </Layout>
   )
 }

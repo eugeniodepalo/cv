@@ -6,15 +6,17 @@ export default (createStore: any, Page: any) => {
     static async getInitialProps() {
       return { initialState: createStore().getState() }
     }
-  
+
     constructor(props: any) {
       super(props)
       this.state = { store: createStore(props.initialState) }
     }
-  
+
     render() {
+      const { store } = this.state
+
       return (
-        <Provider store={this.state.store}>
+        <Provider store={store}>
           <Page />
         </Provider>
       )

@@ -1,4 +1,4 @@
-import update from 'immutability-helper';
+import update from 'immutability-helper'
 
 export const handleIncrementCount = (state: any) => {
   return update(state, {

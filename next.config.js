@@ -1,17 +1,11 @@
 const withTypescript = require('@zeit/next-typescript')
-const update = require('immutability-helper')
-const path = require('path')
+const webpackConfig = require('./webpack.config')
 
 module.exports = withTypescript({
   target: 'serverless',
 
   webpack(config) {
-    return update(config, {
-      resolve: {
-        alias: {
-          cv: { $set: path.join(__dirname, 'lib') }
-        }
-      }
-    })
+    Object.assign(config.resolve.alias, webpackConfig.resolve.alias)
+    return config
   }
 })

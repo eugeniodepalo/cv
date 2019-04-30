@@ -1,6 +1,6 @@
-import baseCreateStore from 'cv/createStore';
-import { types as actionTypes } from './actions';
-import { handleIncrementCount, handleDecrementCount } from './handlers';
+import createStore from 'cv/createStore'
+import { types as actionTypes } from './actions'
+import { handleIncrementCount, handleDecrementCount } from './handlers'
 
 const initialState = {
   count: 0
@@ -18,5 +18,5 @@ const reducer = (state = initialState, action: any) => {
 }
 
 export default (state = initialState) => {
-  return baseCreateStore(reducer, state)
+  return createStore(reducer, state)
 }
