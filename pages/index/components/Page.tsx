@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Layout from 'cv/components/Layout'
 import { incrementCount, decrementCount } from '../actions'
 
-// eslint-disable-next-line no-undef
 const Button = styled.button<any>`
   background-color: ${({ count }: any) => (count >= 0 ? 'green' : 'red')};
 `

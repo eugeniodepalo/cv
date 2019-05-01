@@ -30,6 +30,8 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.8",
     "@types/styled-components": "^4.1.14",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
     "@zeit/next-typescript": "^1.1.1",
     "babel-eslint": "^10.0.1",
     "babel-plugin-styled-components": "^1.10.0",
@@ -53,6 +55,7 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "styled-components": "^4.2.0",
-    "styled-reset": "^2.0.9"
+    "styled-reset": "^2.0.9",
+    "typescript": "^3.4.5"
   }
 }

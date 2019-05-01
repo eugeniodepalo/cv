@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
-    "noImplicitAny": true
+    "baseUrl": ".",
+    "paths": {
+      "cv/*": ["./lib/*"]
+    }
   }
 }
