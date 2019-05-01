@@ -4,5 +4,8 @@
   "regions": ["lhr1", "sfo1", "hnd1"],
   "builds": [
     { "src": "package.json", "use": "@now/next" }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
