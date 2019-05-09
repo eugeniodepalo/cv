@@ -4,11 +4,15 @@ module.exports = {
     'airbnb',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended'
   ],
-  plugins: ['react', 'jsx-a11y', 'import', 'prettier'],
+  plugins: ['react', 'jsx-a11y', 'import', 'prettier', 'jest'],
   settings: {
     'import/resolver': 'webpack'
+  },
+  env: {
+    'jest/globals': true
   },
   rules: {
     'max-len': ['error', 120],
