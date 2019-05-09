@@ -1,10 +1,9 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  parser: 'babel-eslint',
   extends: [
     'airbnb',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended'
   ],
   plugins: ['react', 'jsx-a11y', 'import', 'prettier', 'jest'],
@@ -20,11 +19,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    '@typescript-eslint/indent': ['error', 2],
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
     'prettier/prettier': ['error', {
       singleQuote: true,
       trailingComma: 'none',
