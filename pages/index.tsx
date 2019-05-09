@@ -1,5 +1,5 @@
-import createContainer from 'cv/createContainer'
-import cvCreateStore from 'cv/createStore'
+import createContainer from '~/createContainer'
+import rootCreateStore from '~/createStore'
 import reducer from './index/reducer'
 import Page from './index/components/Page'
 
@@ -8,7 +8,7 @@ const initialState = {
 }
 
 const createStore = (state = initialState) => {
-  return cvCreateStore(reducer, state)
+  return rootCreateStore(reducer, state)
 }
 
 export default createContainer(createStore, Page)

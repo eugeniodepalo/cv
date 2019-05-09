@@ -4,7 +4,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx'],
     alias: {
-      cv: path.join(__dirname, 'lib')
+      '~': path.join(__dirname, 'lib')
     }
   }
 }

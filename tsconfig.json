@@ -4,7 +4,7 @@
     "noImplicitAny": true,
     "baseUrl": ".",
     "paths": {
-      "cv/*": ["./lib/*"]
+      "~/*": ["./lib/*"]
     }
   }
 }
