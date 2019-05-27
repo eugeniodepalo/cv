@@ -3,8 +3,47 @@ export default [
     description: `DotaMastery
     Techs: Ember.js/Rails/Postgres/Sidekiq/Rake
     Description:
-    Designs and builds DotaMastery, a web platform for Dota players to search and learn from high-skill replays.
+    A web platform for Dota players to search and learn from high-skill replays.
     `
+  },
+  {
+    description: `ember-calendar: Ember component to create and manage events in a timezone-aware calendar.
+    techs: Ember.js`
+  },
+  {
+    description: `terraform-server-template: Blueprint to host and deploy web services with Terraform/Ansible/Dokku.
+    techs: Terraform/Ansible/Dokku/Bash`
+  },
+  {
+    description: `twitchpluschat: Ruby app to record and replay live Twitch stream interactions.
+    techs: Rails/Thor`
+  },
+  {
+    description: `kappa-slack: Ruby app to import Twitch emotes in any Slack team.
+    techs: Ruby/Mechanize`
+  },
+  {
+    description: `colormaniac-ios: Visual memory game for iPad.
+    techs: Obj-C/Cocoa Touch`
+  },
+  {
+    description: `dotamastery-recorder: Node.js app to record and store replays automatically by
+    using the Dota 2 game client.
+    techs: Node.js/Bull/robotjs`
+  },
+  {
+    description: `haterblock-client: ReasonML front-end for the Haterblock web service.
+    techs: ReasonML/React`
+  },
+  {
+    description: `haterblock-server: Phoenix back-end for Haterblock, a web
+    service providing automated toxic comments moderation through sentiment analysis.
+    techs: Elixir/Phoenix`
+  },
+  {
+    description: `knockout: Ember.js front-end for Knockout, a web platform
+    for gamers to catch up with their favorite esports events completely spoiler-free.
+    techs: Ember.js/SASS`
   },
   {
     description: `Smart Pension
