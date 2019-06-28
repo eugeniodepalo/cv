@@ -1,22 +1,54 @@
+import styled from 'styled-components'
 import { connect } from 'react-redux'
-import Layout from '~/components/Layout'
-import cv from '../cv'
+import { Box } from '@rebass/grid'
+import { Layout, Section, Link } from '~/components'
+import { Header, PositionItem, ProjectItem, RepoItem } from '.'
+import { positions, projects, repos } from '../cv'
 
-const Position = ({ position }: any) => {
-  return <p>{position.description}</p>
-}
+const Container = styled.div`
+  border-top: 6px solid #333;
+  background-color: ${(props) => props.theme.bgColor};
+`
+
+const Footer = styled.footer`
+  text-align: center;
+`
 
 const Page = () => {
   return (
     <Layout title="CV">
-      {cv.map((p: any, index) => (
-        <Position position={p} key={index.toString()} />
-      ))}
+      <Box mb={3}>
+        <Container>
+          <Section>
+            <Header />
+          </Section>
+          <main>
+            <Section title="Positions">
+              {positions.map((p) => (
+                <PositionItem position={p} key={p.id} />
+              ))}
+            </Section>
+            <Section title="Projects">
+              {projects.map((p) => (
+                <ProjectItem project={p} key={p.id} />
+              ))}
+            </Section>
+            <Section title="Repos">
+              {repos.map((r) => (
+                <RepoItem repo={r} key={r.id} />
+              ))}
+            </Section>
+          </main>
+        </Container>
+      </Box>
+      <Footer>
+        Fork this resume on <Link href="https://github.com/eugeniodepalo/cv">GitHub</Link>
+      </Footer>
     </Layout>
   )
 }
 
-const mapStateToProps = () => ({})
+const mapStateToProps = (/* state */) => ({})
 const mapDispatchToProps = {}
 
 export default connect(

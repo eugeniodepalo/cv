@@ -1,5 +1,7 @@
 import { Reset } from 'styled-reset'
 import NextApp, { Container } from 'next/app'
+import { ThemeProvider } from 'styled-components'
+import theme from '~/theme'
 
 export default class App extends NextApp {
   render() {
@@ -8,7 +10,9 @@ export default class App extends NextApp {
     return (
       <Container>
         <Reset />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Container>
     )
   }
