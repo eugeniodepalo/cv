@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Box, Flex } from '@rebass/grid'
 import { Link } from '~/components'
-import { info } from '../cv'
+import { info } from '../../cv'
 
 const Picture = styled.img`
   border: 2px dashed ${(props) => props.theme.primaryColor};
