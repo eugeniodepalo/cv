@@ -1,6 +1,6 @@
 import buildEntities from './buildEntities'
 
-const enum TeamSize {
+enum TeamSize {
   Small,
   Medium,
   Large
