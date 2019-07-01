@@ -14,41 +14,39 @@ const Footer = styled.footer`
   text-align: center;
 `
 
-const Page = () => {
-  return (
-    <Layout title="CV">
-      <Box mb={3}>
-        <Container>
-          <Section>
-            <Header />
+const Page = (): JSX.Element => (
+  <Layout title="CV">
+    <Box mb={3}>
+      <Container>
+        <Section>
+          <Header />
+        </Section>
+        <main>
+          <Section title="Positions">
+            {positions.map((p) => (
+              <PositionItem position={p} key={p.id} />
+            ))}
           </Section>
-          <main>
-            <Section title="Positions">
-              {positions.map((p) => (
-                <PositionItem position={p} key={p.id} />
-              ))}
-            </Section>
-            <Section title="Projects">
-              {projects.map((p) => (
-                <ProjectItem project={p} key={p.id} />
-              ))}
-            </Section>
-            <Section title="Repos">
-              {repos.map((r) => (
-                <RepoItem repo={r} key={r.id} />
-              ))}
-            </Section>
-          </main>
-        </Container>
-      </Box>
-      <Footer>
-        Fork this resume on <Link href="https://github.com/eugeniodepalo/cv">GitHub</Link>
-      </Footer>
-    </Layout>
-  )
-}
+          <Section title="Projects">
+            {projects.map((p) => (
+              <ProjectItem project={p} key={p.id} />
+            ))}
+          </Section>
+          <Section title="Repos">
+            {repos.map((r) => (
+              <RepoItem repo={r} key={r.id} />
+            ))}
+          </Section>
+        </main>
+      </Container>
+    </Box>
+    <Footer>
+      Fork this resume on <Link href="https://github.com/eugeniodepalo/cv">GitHub</Link>
+    </Footer>
+  </Layout>
+)
 
-const mapStateToProps = (/* state */) => ({})
+const mapStateToProps = (/* state */): any => ({})
 const mapDispatchToProps = {}
 
 export default connect(

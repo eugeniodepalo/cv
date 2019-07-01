@@ -7,8 +7,6 @@ const initialState = {
   count: 0
 }
 
-const createStore = (state = initialState) => {
-  return rootCreateStore(reducer, state)
-}
+const createStore = (state = initialState): any => rootCreateStore(reducer, state)
 
 export default createContainer(createStore, Page)

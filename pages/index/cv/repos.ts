@@ -3,7 +3,7 @@ import buildEntities from './buildEntities'
 interface Repo {
   name: string
   description: string
-  techs: Array<string>
+  techs: string[]
 }
 
 export default buildEntities<Repo>([

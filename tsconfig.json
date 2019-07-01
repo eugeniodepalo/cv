@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "noImplicitAny": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["./lib/*"]

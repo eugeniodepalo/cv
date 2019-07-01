@@ -2,7 +2,7 @@ interface Info {
   fullName: string
   jobTitle: string
   profilePictureUrl: string
-  traits: Array<string>
+  traits: string[]
   status: string
   email: string
   githubHandle: string

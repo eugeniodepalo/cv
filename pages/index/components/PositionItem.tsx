@@ -1,3 +1,1 @@
-export default ({ position }: any) => {
-  return <p>{position.description}</p>
-}
+export default ({ position }: any) => <p>{position.description}</p>

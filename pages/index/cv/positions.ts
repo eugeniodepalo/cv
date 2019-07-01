@@ -1,6 +1,6 @@
 import buildEntities from './buildEntities'
 
-enum TeamSize {
+const enum TeamSize {
   Small,
   Medium,
   Large
@@ -9,11 +9,11 @@ enum TeamSize {
 interface Position {
   name: string
   description: string
-  highlights: Array<string>
+  highlights: string[]
   teamSize: TeamSize
   role: string
-  process: Array<string>
-  techs: Array<string>
+  process: string[]
+  techs: string[]
 }
 
 export default buildEntities<Position>([

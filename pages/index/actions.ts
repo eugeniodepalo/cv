@@ -3,10 +3,5 @@ export const types = {
   DECREMENT: 'DECREMENT'
 }
 
-export const incrementCount = () => {
-  return { type: types.INCREMENT }
-}
-
-export const decrementCount = () => {
-  return { type: types.DECREMENT }
-}
+export const incrementCount = (): any => ({ type: types.INCREMENT })
+export const decrementCount = (): any => ({ type: types.DECREMENT })

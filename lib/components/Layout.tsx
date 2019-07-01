@@ -7,13 +7,11 @@ const Container = styled(Box)`
   font-family: courier;
 `
 
-export default ({ title, children }: any) => {
-  return (
-    <Container mx="auto" my={4}>
-      <Head>
-        <title>Eugenio Depalo - {title}</title>
-      </Head>
-      {children}
-    </Container>
-  )
-}
+export default ({ title, children }: any) => (
+  <Container mx="auto" my={4}>
+    <Head>
+      <title>Eugenio Depalo - {title}</title>
+    </Head>
+    {children}
+  </Container>
+)

@@ -1,3 +1,1 @@
-export default ({ repo }: any) => {
-  return <p>{repo.description}</p>
-}
+export default ({ repo }: any) => <p>{repo.description}</p>
