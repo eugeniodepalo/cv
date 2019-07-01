@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Box } from '@rebass/grid'
 import { Layout, Section, Link } from '~/components'
 import { Header, PositionItem, ProjectItem, RepoItem } from './Page/'
-import { positions, projects, repos } from '../cv'
+import { positions, projects, repos } from '../cv/data'
 
 const Container = styled.div`
   border-top: 6px solid #333;

@@ -1,4 +1,4 @@
-import buildEntities from './buildEntities'
+import buildEntities from '../buildEntities'
 
 interface Repo {
   name: string

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Box, Flex } from '@rebass/grid'
 import { Link } from '~/components'
-import { info } from '../../cv'
+import { info } from '../../cv/data'
 
 const Picture = styled.img`
   border: 2px dashed ${(props) => props.theme.primaryColor};
@@ -17,7 +17,7 @@ const Subtitle = styled.h2`
 
 export default () => (
   <Flex as="header">
-    <Box width={[1 / 5]} mr={3}>
+    <Box width={[2 / 12]} mr={3}>
       <Picture src={info.profilePictureUrl} width="100%" />
     </Box>
     <Box>

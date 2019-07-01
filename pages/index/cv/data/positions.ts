@@ -1,6 +1,8 @@
-import buildEntities from './buildEntities'
+import buildEntities from '../buildEntities'
 import { Moment } from 'moment'
 import * as moment from 'moment'
+
+const date = (value: string) => moment(value, 'DD/MM/YYYY')
 
 enum TeamSize {
   Small,
@@ -8,7 +10,7 @@ enum TeamSize {
   Large
 }
 
-interface Position {
+export interface Position {
   name: string
   description: string
   highlights: string[]
@@ -24,8 +26,8 @@ export default buildEntities<Position>([
   {
     name: 'Smart Pension',
     teamSize: TeamSize.Medium,
-    startDate: moment('01/01/2019'),
-    endDate: moment('06/01/2019'),
+    startDate: date('01/01/2019'),
+    endDate: date('01/07/2019'),
     role: 'Senior Front-end Developer',
     techs: [
       'ember',
@@ -60,8 +62,8 @@ export default buildEntities<Position>([
   {
     name: 'British Gas',
     teamSize: TeamSize.Medium,
-    startDate: moment('04/01/2018'),
-    endDate: moment('12/01/2018'),
+    startDate: date('01/04/2018'),
+    endDate: date('01/12/2018'),
     role: 'Lead Front-end Developer',
     techs: ['ember', 'aem', 'qunit', 'bootstrap'],
     process: ['jira', 'scrum', 'standups', 'demos'],
@@ -77,8 +79,8 @@ export default buildEntities<Position>([
   {
     name: 'Featurist',
     teamSize: TeamSize.Medium,
-    startDate: moment('03/01/2017'),
-    endDate: moment('03/01/2018'),
+    startDate: date('01/03/2017'),
+    endDate: date('01/03/2018'),
     role: 'Senior Front-end Developer',
     techs: ['react', 'hyperdom.js', 'node', 'firebase', 'braintree', 'redis', 'cucumber.js', 'mocha', 'chai'],
     process: ['trello', 'kanban', 'standups'],
@@ -96,8 +98,8 @@ export default buildEntities<Position>([
   {
     name: 'Zapnito',
     teamSize: TeamSize.Medium,
-    startDate: moment('04/01/2016'),
-    endDate: moment('02/01/2017'),
+    startDate: date('01/04/2016'),
+    endDate: date('01/02/2017'),
     role: 'Senior Front-end Developer',
     techs: ['ember', 'qunit', 'rails', 'postgres', 'redis', 'sass', 'bem'],
     process: ['trello', 'kanban', 'standups', 'demos', 'retros'],
@@ -112,8 +114,8 @@ export default buildEntities<Position>([
   {
     name: 'Kayako',
     teamSize: TeamSize.Medium,
-    startDate: moment('12/01/2015'),
-    endDate: moment('03/01/2016'),
+    startDate: date('01/12/2015'),
+    endDate: date('01/03/2016'),
     role: 'Senior Front-end Developer',
     techs: ['ember', 'qunit', 'sass'],
     process: ['jira', 'scrum', 'standups', 'retros'],
@@ -126,8 +128,8 @@ export default buildEntities<Position>([
   {
     name: 'Tallarium',
     teamSize: TeamSize.Small,
-    startDate: moment('03/01/2015'),
-    endDate: moment('11/01/2015'),
+    startDate: date('01/03/2015'),
+    endDate: date('01/11/2015'),
     role: 'Senior Front-end Developer',
     techs: ['ember', 'node'],
     process: ['trello', 'kanban', 'standups'],
@@ -141,8 +143,8 @@ export default buildEntities<Position>([
   {
     name: 'Starck.com (GBH)',
     teamSize: TeamSize.Small,
-    startDate: moment('02/01/2015'),
-    endDate: moment('03/01/2015'),
+    startDate: date('01/02/2015'),
+    endDate: date('01/03/2015'),
     role: 'Front-end Developer',
     techs: ['ember', 'firebase', 'sass', 'lunr.js', 'bootstrap', 'aws', 'bem'],
     process: ['trello', 'kanban', 'standups'],
@@ -159,8 +161,8 @@ export default buildEntities<Position>([
   {
     name: 'AlphaSights',
     teamSize: TeamSize.Large,
-    startDate: moment('06/01/2014'),
-    endDate: moment('01/01/2015'),
+    startDate: date('01/06/2014'),
+    endDate: date('01/01/2015'),
     role: 'Senior front-end Developer',
     process: ['pivotal-tracker', 'trello', 'scrum', 'standups', 'retros', 'demos'],
     techs: ['rails', 'ember', 'postgres', 'sass', 'tdd', 'bem'],
@@ -177,8 +179,8 @@ export default buildEntities<Position>([
   {
     name: 'Listora',
     teamSize: TeamSize.Medium,
-    startDate: moment('02/01/2014'),
-    endDate: moment('05/01/2014'),
+    startDate: date('01/02/2014'),
+    endDate: date('01/05/2014'),
     role: 'Front-end Developer',
     techs: ['angular', 'clojure', 'firebase', 'sass', 'mocha', 'chai'],
     process: ['trello', 'kanban', 'standups'],
@@ -188,8 +190,8 @@ export default buildEntities<Position>([
   {
     name: 'Responsa',
     teamSize: TeamSize.Small,
-    startDate: moment('02/01/2012'),
-    endDate: moment('01/01/2014'),
+    startDate: date('01/02/2012'),
+    endDate: date('01/01/2014'),
     role: 'Co-founder and Lead Developer',
     techs: ['rails', 'rjs', 'sass', 'rspec', 'capybara', 'sso', 'postgres', 'redis', 'json', 'tdd', 'knockout'],
     process: ['trello', 'kanban', 'standups'],
@@ -203,8 +205,8 @@ export default buildEntities<Position>([
   {
     name: 'H-umus',
     teamSize: TeamSize.Medium,
-    startDate: moment('01/01/2011'),
-    endDate: moment('01/01/2012'),
+    startDate: date('01/01/2011'),
+    endDate: date('01/01/2012'),
     role: 'iOS Developer',
     techs: ['cocoa-touch', 'frank', 'hudson'],
     process: ['pivotal-tracker', 'scrum', 'standups'],
