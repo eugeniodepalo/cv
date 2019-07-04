@@ -34,7 +34,8 @@ export default ({ position }: Props) => {
           <Box mb="2">
             <Title>{position.name}</Title>
           </Box>
-          {duration}
+          <Box>{duration}</Box>
+          <Box></Box>
         </Box>
         <Box width={9 / 12}>
           {position.description}
