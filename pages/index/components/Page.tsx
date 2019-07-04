@@ -37,7 +37,7 @@ const Page = (): JSX.Element => (
     <Box mb={3}>
       <Container>
         <StickyContainer>
-          <Sticky topOffset={100}>{stickyContent}</Sticky>
+          <Sticky topOffset={200}>{stickyContent}</Sticky>
           <main>
             <Section title="Positions" id="positions" pt={0}>
               {positions.map((p) => (

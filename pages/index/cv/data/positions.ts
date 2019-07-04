@@ -4,7 +4,7 @@ import * as moment from 'moment'
 
 const date = (value: string) => moment(value, 'DD/MM/YYYY')
 
-enum TeamSize {
+export enum TeamSize {
   Small,
   Medium,
   Large

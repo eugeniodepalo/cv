@@ -1,20 +1,9 @@
-import { Position } from '../../cv/data/positions'
+import { Position, TeamSize } from '../../cv/data/positions'
 import styled from 'styled-components'
+import { Fragment } from 'react'
 import { Flex, Box } from '@rebass/grid'
+import { lighten } from 'polished'
 import * as moment from 'moment'
-import { Moment } from 'moment'
-
-// export interface Position {
-//   name: string
-//   description: string
-//   highlights: string[]
-//   teamSize: TeamSize
-//   role: string
-//   process: string[]
-//   techs: string[],
-//   startDate: Moment,
-//   endDate: Moment
-// }
 
 interface Props {
   position: Position
@@ -24,24 +13,82 @@ const Title = styled.h1`
   font-size: 1.5rem;
 `
 
+const DefinitionList = styled.dl`
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  grid-template-columns: max-content 1fr;
+`
+
+const Label = styled.div`
+  background-color: ${(props) => lighten(0.7, props.theme.primaryColor)};
+`
+
+const Value = styled.div`
+  background-color: ${(props) => lighten(0.2, props.theme.activeColor)};
+`
+
+const DefinitionItem = ({ label, value, children }: any) => (
+  <Fragment>
+    <dt>
+      <Label>
+        <Box p={1}>{label}</Box>
+      </Label>
+    </dt>
+    <dd>{value !== undefined ? value : children}</dd>
+  </Fragment>
+)
+
+const DefinitionValues = ({ values }: any) => (
+  <Flex flexWrap="wrap">
+    {values.map((value: any) => (
+      <Box mr={1} mb={1}>
+        <Value>{value}</Value>
+      </Box>
+    ))}
+  </Flex>
+)
+
+const teamSizeToString = (teamSize: TeamSize) => {
+  switch (teamSize) {
+    case TeamSize.Small:
+      return 'Small (1-3 people)'
+    case TeamSize.Medium:
+      return 'Medium (3-6 people)'
+    case TeamSize.Large:
+      return 'Large (7+ people)'
+  }
+}
+
 export default ({ position }: Props) => {
   const duration = moment.duration(position.endDate.diff(position.startDate)).humanize()
 
   return (
     <Box as="article" mb={4}>
+      <Box mb={3}>
+        <Title>{position.name}</Title>
+      </Box>
       <Flex>
-        <Box width={3 / 12}>
-          <Box mb="2">
-            <Title>{position.name}</Title>
-          </Box>
-          <Box>{duration}</Box>
-          <Box></Box>
+        <Box width={4 / 12}>
+          <DefinitionList>
+            <DefinitionItem label="Duration" value={duration} />
+            <DefinitionItem label="Role" value={position.role} />
+            <DefinitionItem label="Team Size" value={teamSizeToString(position.teamSize)} />
+            <DefinitionItem label="Techs">
+              <DefinitionValues values={position.techs} />
+            </DefinitionItem>
+            <DefinitionItem label="Process">
+              <DefinitionValues values={position.process} />
+            </DefinitionItem>
+          </DefinitionList>
         </Box>
-        <Box width={9 / 12}>
+        <Box width={8 / 12}>
           {position.description}
           <ul>
             {position.highlights.map((highlight, index) => (
-              <li key={index.toString()}>{highlight}</li>
+              <li key={index.toString()}>
+                <Box mb={3}>{highlight}</Box>
+              </li>
             ))}
           </ul>
         </Box>

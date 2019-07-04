@@ -4,7 +4,7 @@ import { Link } from '~/components'
 import { info } from '../../cv/data'
 
 const Header = styled.header<any>`
-  border-bottom: ${(props) => (!props.isSticky ? `1px dashed ${props.theme.primaryColor};` : '0')};
+  border-bottom: ${(props) => (props.isSticky ? '0' : `1px dashed ${props.theme.primaryColor};`)};
 `
 
 const Picture = styled.img`
@@ -21,7 +21,7 @@ const Subtitle = styled.h2`
 
 export default ({ isSticky }: any) => (
   <Header isSticky={isSticky}>
-    <Flex mb={!isSticky ? 3 : 0}>
+    <Flex mb={isSticky ? 0 : 3}>
       {!isSticky && (
         <Box width={[2 / 12]} mr={4}>
           <Picture src={info.profilePictureUrl} width="100%" />
