@@ -8,16 +8,20 @@ const fetch = (state: any) =>
 
 const fetchSuccess = (state: any, results: any) =>
   update(state, {
-    isFetching: { $set: false },
-    error: { $set: undefined },
-    results: { $set: results }
+    $merge: {
+      isFetching: false,
+      error: undefined,
+      results
+    }
   })
 
 const fetchError = (state: any, error: any) =>
   update(state, {
-    isFetching: { $set: false },
-    error: { $set: error },
-    results: { $set: undefined }
+    $merge: {
+      isFetching: false,
+      error,
+      results: undefined
+    }
   })
 
 const initialState: any = {
