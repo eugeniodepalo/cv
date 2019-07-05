@@ -1,9 +1,9 @@
 import { shallow } from 'enzyme'
-import Layout from './Layout'
+import Page from './Page'
 
 describe('With Enzyme', () => {
   it('renders', () => {
-    const layout = shallow(<Layout />)
+    const layout = shallow(<Page />)
     expect(layout.exists()).toBe(true)
   })
 })

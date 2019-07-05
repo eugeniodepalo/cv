@@ -1,6 +1,5 @@
 import Header from './Header'
 import PositionItem from './PositionItem'
-import RepoItem from './RepoItem'
-import ProjectItem from './ProjectItem'
+import EntityItem from './EntityItem'
 
-export { Header, PositionItem, RepoItem, ProjectItem }
+export { Header, PositionItem, EntityItem }

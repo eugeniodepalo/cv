@@ -5,7 +5,7 @@ import { Box } from '@rebass/grid'
 import { transparentize } from 'polished'
 import { StickyContainer, Sticky } from 'react-sticky'
 import { Layout, Section, Link } from '~/components'
-import { Header, PositionItem, ProjectItem, RepoItem } from './Page/'
+import { Header, PositionItem, EntityItem } from './Page/'
 import { positions, projects } from '../cv/data'
 import { getRepos, getIsFetchingRepos, getReposError } from '../selectors/repos'
 import { fetch as fetchRepos } from '../actions/repos'
@@ -62,11 +62,11 @@ const Page = class extends Component<any> {
                   {this.props.reposError && <Error>There was an error fetching repos.</Error>}
                   {this.props.isFetchingRepos
                     ? 'Fetching repos...'
-                    : (this.props.repos || []).map((r: any) => <RepoItem repo={r} key={r.id} />)}
+                    : (this.props.repos || []).map((r: any) => <EntityItem entity={r} key={r.id} />)}
                 </Section>
                 <Section title="Projects" id="projects">
                   {projects.map((p) => (
-                    <ProjectItem project={p} key={p.id} />
+                    <EntityItem entity={p} key={p.id} />
                   ))}
                 </Section>
               </main>
