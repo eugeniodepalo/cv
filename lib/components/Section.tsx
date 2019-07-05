@@ -7,9 +7,11 @@ const Title = styled.h1`
 
 export default ({ children, title, ...props }: any) => (
   <Box p={3} as="section" {...props}>
-    <Box mb={3}>
-      <Title>{title}</Title>
-    </Box>
+    {title && (
+      <Box mb={3}>
+        <Title>{title}</Title>
+      </Box>
+    )}
     {children}
   </Box>
 )
