@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Box, Flex } from '@rebass/grid'
+import { Hide } from '@rebass/hide'
 import { Link } from '~/components'
 import { info } from '../../cv/data'
 
@@ -23,9 +24,9 @@ export default ({ isSticky }: any) => (
   <Header isSticky={isSticky}>
     <Flex mb={isSticky ? 0 : 3}>
       {!isSticky && (
-        <Box width={[2 / 12]} mr={4}>
+        <Hide xsmall small width={[2 / 12]} mr={4}>
           <Picture src={info.profilePictureUrl} width="100%" />
-        </Box>
+        </Hide>
       )}
       <Box flex="1 1 auto">
         <Flex>

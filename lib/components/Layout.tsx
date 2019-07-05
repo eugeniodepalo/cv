@@ -8,7 +8,7 @@ const Container = styled(Box)`
 `
 
 export default ({ title, children }: any) => (
-  <Container mx="auto" my={4}>
+  <Container mx="auto" my={[0, 0, 4]}>
     <Head>
       <title>Eugenio Depalo - {title}</title>
     </Head>

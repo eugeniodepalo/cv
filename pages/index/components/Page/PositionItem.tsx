@@ -55,8 +55,8 @@ export default ({ position }: Props) => {
       <Box mb={3}>
         <Title>{position.name}</Title>
       </Box>
-      <Flex>
-        <Box width={4 / 12}>
+      <Flex flexWrap="wrap">
+        <Box width={[1, 1, 4 / 12]} mb={[3, 0]}>
           <DefinitionList>
             <DefinitionItem label="Duration" value={duration} />
             <DefinitionItem label="Role" value={position.role} />
@@ -69,7 +69,7 @@ export default ({ position }: Props) => {
             </DefinitionItem>
           </DefinitionList>
         </Box>
-        <Box width={8 / 12}>
+        <Box width={[1, 1, 8 / 12]}>
           <Box mb={3}>{position.description}</Box>
           <ul>
             {position.highlights.map((highlight, index) => (

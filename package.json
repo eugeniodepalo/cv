@@ -27,6 +27,7 @@
   "dependencies": {
     "@octokit/rest": "^16.28.2",
     "@rebass/grid": "^6.0.0",
+    "@rebass/hide": "^1.0.0-2",
     "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-styled-components": "^1.10.0",
     "immutability-helper": "^3.0.0",
