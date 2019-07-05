@@ -44,7 +44,7 @@ const Page = (): JSX.Element => (
                 <PositionItem position={p} key={p.id} />
               ))}
             </Section>
-            <Section title="Repos" id="repos">
+            <Section title="Repos" id="repos" pt={0}>
               {repos.map((r) => (
                 <RepoItem repo={r} key={r.id} />
               ))}

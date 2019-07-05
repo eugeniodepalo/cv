@@ -14,7 +14,7 @@ const Link = styled(Box)`
 
 Link.defaultProps = {
   p: 2,
-  mx: 1,
+  mr: 1,
   as: 'a'
 }
 
