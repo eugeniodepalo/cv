@@ -15,7 +15,8 @@ const Link = styled(Box)`
 Link.defaultProps = {
   p: 2,
   mr: 1,
-  as: 'a'
+  as: 'a',
+  target: '_blank'
 }
 
 export default Link

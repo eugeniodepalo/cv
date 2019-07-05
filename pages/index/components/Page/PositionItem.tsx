@@ -70,7 +70,7 @@ export default ({ position }: Props) => {
           </DefinitionList>
         </Box>
         <Box width={8 / 12}>
-          {position.description}
+          <Box mb={3}>{position.description}</Box>
           <ul>
             {position.highlights.map((highlight, index) => (
               <li key={index.toString()}>

@@ -27,15 +27,15 @@ export default buildEntities<Repo>([
     techs: ['rails', 'thor']
   },
   {
-    name: 'knockout',
+    name: 'calderalabs/knockout',
     techs: ['ember', 'sass']
   },
   {
-    name: 'kappa-slack',
+    name: 'calderalabs/kappa-slack',
     techs: ['ruby', 'mechanize']
   },
   {
-    name: 'colormaniac-ios',
+    name: 'calderalabs/colormaniac-ios',
     techs: ['objective-c', 'cocoa-touch']
   }
 ])
