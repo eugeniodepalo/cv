@@ -1,4 +1,5 @@
 import { Position, TeamSize } from '../../cv/data/positions'
+import { BadgeList } from '~/components'
 import styled from 'styled-components'
 import { Fragment } from 'react'
 import { Flex, Box } from '@rebass/grid'
@@ -24,10 +25,6 @@ const Label = styled.div`
   background-color: ${(props) => lighten(0.7, props.theme.primaryColor)};
 `
 
-const Value = styled.div`
-  background-color: ${(props) => lighten(0.2, props.theme.activeColor)};
-`
-
 const DefinitionItem = ({ label, value, children }: any) => (
   <Fragment>
     <dt>
@@ -37,16 +34,6 @@ const DefinitionItem = ({ label, value, children }: any) => (
     </dt>
     <dd>{value !== undefined ? value : children}</dd>
   </Fragment>
-)
-
-const DefinitionValues = ({ values }: any) => (
-  <Flex flexWrap="wrap">
-    {values.map((value: any) => (
-      <Box mr={1} mb={1}>
-        <Value>{value}</Value>
-      </Box>
-    ))}
-  </Flex>
 )
 
 const teamSizeToString = (teamSize: TeamSize) => {
@@ -75,10 +62,10 @@ export default ({ position }: Props) => {
             <DefinitionItem label="Role" value={position.role} />
             <DefinitionItem label="Team Size" value={teamSizeToString(position.teamSize)} />
             <DefinitionItem label="Techs">
-              <DefinitionValues values={position.techs} />
+              <BadgeList values={position.techs} />
             </DefinitionItem>
             <DefinitionItem label="Process">
-              <DefinitionValues values={position.process} />
+              <BadgeList values={position.process} />
             </DefinitionItem>
           </DefinitionList>
         </Box>
