@@ -13,7 +13,7 @@ const Badge = styled.div`
 export default ({ values }: any) => (
   <BadgeList flexWrap="wrap">
     {values.map((value: any) => (
-      <Box mr={1} mb={1}>
+      <Box mr={1} mb={1} key={value}>
         <Badge>{value}</Badge>
       </Box>
     ))}
