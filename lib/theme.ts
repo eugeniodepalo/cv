@@ -1,12 +1,4 @@
-interface Theme {
-  bgColor: string
-  primaryColor: string
-  linkColor: string
-  activeColor: string
-  errorColor: string
-}
-
-const theme: Theme = {
+const theme = {
   bgColor: '#f5f5f5',
   primaryColor: '#333',
   linkColor: '#fff',
@@ -14,4 +6,5 @@ const theme: Theme = {
   errorColor: '#FF665A'
 }
 
+export type Theme = typeof theme
 export default theme

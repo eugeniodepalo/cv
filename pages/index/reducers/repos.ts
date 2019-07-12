@@ -1,12 +1,20 @@
 import update from 'immutability-helper'
-import { Action } from '../actions/repos'
+import { Reducer } from 'redux'
+import { FetchedRepo } from '~/api'
+import { ActionType, Action } from '../actions/repos'
 
-const fetch = (state: any) =>
+interface State {
+  results?: FetchedRepo[]
+  error?: Error
+  isFetching: boolean
+}
+
+const fetch = (state: State): State =>
   update(state, {
     isFetching: { $set: true }
   })
 
-const fetchSuccess = (state: any, results: any) =>
+const fetchSuccess = (state: State, results: FetchedRepo[]) =>
   update(state, {
     $merge: {
       isFetching: false,
@@ -15,7 +23,7 @@ const fetchSuccess = (state: any, results: any) =>
     }
   })
 
-const fetchError = (state: any, error: any) =>
+const fetchError = (state: State, error?: Error) =>
   update(state, {
     $merge: {
       isFetching: false,
@@ -24,20 +32,22 @@ const fetchError = (state: any, error: any) =>
     }
   })
 
-const initialState: any = {
+const initialState: State = {
   results: null,
   isFetching: false
 }
 
-export default (state: any = initialState, action: any) => {
+const reducer: Reducer<State, Action> = (state: State = initialState, action: Action) => {
   switch (action.type) {
-    case Action.FETCH:
+    case ActionType.FETCH:
       return fetch(state)
-    case Action.FETCH_SUCCESS:
+    case ActionType.FETCH_SUCCESS:
       return fetchSuccess(state, action.results)
-    case Action.FETCH_ERROR:
+    case ActionType.FETCH_ERROR:
       return fetchError(state, action.error)
+    default:
+      return state
   }
-
-  return state
 }
+
+export default reducer

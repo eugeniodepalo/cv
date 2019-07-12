@@ -17,7 +17,8 @@ module.exports = {
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'never'],
     'arrow-parens': ['error', 'always'],
-    'operator-linebreak': ['error', 'after']
+    'operator-linebreak': ['error', 'after'],
+    'import/prefer-default-export': 'off'
   },
   overrides: [
     {
@@ -27,6 +28,7 @@ module.exports = {
         indent: 'off',
         '@typescript-eslint/indent': ['error', 2],
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/member-delimiter-style': ['error', 'none'],
         '@typescript-eslint/explicit-function-return-type': [
           'error',
           {

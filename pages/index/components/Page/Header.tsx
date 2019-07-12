@@ -2,9 +2,14 @@ import styled from 'styled-components'
 import { Box, Flex } from '@rebass/grid'
 import { Hide } from '@rebass/hide'
 import { Link } from '~/components'
-import { info } from '../../cv/data'
+import { info } from '~/cv/data'
+import { FunctionComponent } from 'react'
 
-const Header = styled.header<any>`
+interface Props {
+  isSticky: boolean
+}
+
+const Content = styled.header<Props>`
   border-bottom: ${(props) => (props.isSticky ? '0' : `1px dashed ${props.theme.primaryColor};`)};
 `
 
@@ -20,8 +25,8 @@ const Subtitle = styled.h2`
   font-size: 1.5rem;
 `
 
-export default ({ isSticky }: any) => (
-  <Header isSticky={isSticky}>
+const Header: FunctionComponent<Props> = ({ isSticky }) => (
+  <Content isSticky={isSticky}>
     <Flex mb={isSticky ? 0 : 3}>
       {!isSticky && (
         <Hide xsmall small width={[2 / 12]} mr={4}>
@@ -60,5 +65,7 @@ export default ({ isSticky }: any) => (
         )}
       </Box>
     </Flex>
-  </Header>
+  </Content>
 )
+
+export default Header

@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 import { lighten } from 'polished'
 import { Flex, Box } from '@rebass/grid'
+import { FunctionComponent } from 'react'
 
-const BadgeList = styled(Flex)`
+interface Props {
+  values: string[]
+}
+
+const Content = styled(Flex)`
   display: inline-flex;
 `
 
@@ -10,12 +15,14 @@ const Badge = styled.div`
   background-color: ${(props) => lighten(0.2, props.theme.activeColor)};
 `
 
-export default ({ values }: any) => (
-  <BadgeList flexWrap="wrap">
+const BadgeList: FunctionComponent<Props> = ({ values }) => (
+  <Content flexWrap="wrap">
     {values.map((value: any) => (
       <Box mr={1} mb={1} key={value}>
         <Badge>{value}</Badge>
       </Box>
     ))}
-  </BadgeList>
+  </Content>
 )
+
+export default BadgeList

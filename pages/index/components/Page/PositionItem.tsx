@@ -1,13 +1,18 @@
-import { Position, TeamSize } from '../../cv/data/positions'
-import { BadgeList } from '~/components'
+import { Fragment, FunctionComponent } from 'react'
+import * as moment from 'moment'
 import styled from 'styled-components'
-import { Fragment } from 'react'
 import { Flex, Box } from '@rebass/grid'
 import { lighten } from 'polished'
-import * as moment from 'moment'
+import { Position, TeamSize } from '~/cv/data/positions'
+import { BadgeList } from '~/components'
 
 interface Props {
   position: Position
+}
+
+interface DefinitionItemProps {
+  label: string
+  value?: string
 }
 
 const Title = styled.h1`
@@ -25,7 +30,7 @@ const Label = styled.div`
   background-color: ${(props) => lighten(0.7, props.theme.primaryColor)};
 `
 
-const DefinitionItem = ({ label, value, children }: any) => (
+const DefinitionItem: FunctionComponent<DefinitionItemProps> = ({ label, value, children }) => (
   <Fragment>
     <dt>
       <Label>
@@ -36,7 +41,7 @@ const DefinitionItem = ({ label, value, children }: any) => (
   </Fragment>
 )
 
-const teamSizeToString = (teamSize: TeamSize) => {
+const teamSizeToString = (teamSize: TeamSize): string => {
   switch (teamSize) {
     case TeamSize.Small:
       return 'Small (1-3 people)'
@@ -44,10 +49,12 @@ const teamSizeToString = (teamSize: TeamSize) => {
       return 'Medium (3-6 people)'
     case TeamSize.Large:
       return 'Large (7+ people)'
+    default:
+      return teamSize
   }
 }
 
-export default ({ position }: Props) => {
+const PositionItem: FunctionComponent<Props> = ({ position }: Props) => {
   const duration = moment.duration(position.endDate.diff(position.startDate)).humanize()
 
   return (
@@ -83,3 +90,5 @@ export default ({ position }: Props) => {
     </Box>
   )
 }
+
+export default PositionItem

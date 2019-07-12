@@ -1,6 +1,6 @@
 import buildEntities from '../buildEntities'
 
-interface Repo {
+export interface Repo {
   name: string
   techs: string[]
 }

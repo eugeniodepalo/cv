@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from '~/theme'
 
 export default class App extends NextApp {
-  public render(): JSX.Element {
+  public render() {
     const { Component, pageProps } = this.props
 
     return (

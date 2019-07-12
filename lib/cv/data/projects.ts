@@ -1,6 +1,6 @@
 import buildEntities from '../buildEntities'
 
-interface Project {
+export interface Project {
   name: string
   description: string
   websiteUrl: string

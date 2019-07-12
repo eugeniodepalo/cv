@@ -1,8 +1,19 @@
-import { put, takeLeading } from 'redux-saga/effects'
-import { fetchRepos } from '~/api'
-import { Action, fetchError, fetchSuccess } from '../actions/repos'
+import { put, takeLeading, PutEffect, ForkEffect } from 'redux-saga/effects'
+import { fetchRepos, FetchedRepo } from '~/api'
+import {
+  ActionType,
+  FetchAction,
+  FetchSuccessAction,
+  FetchErrorAction,
+  fetchError,
+  fetchSuccess
+} from '../actions/repos'
 
-function* handleFetch({ repos }: any) {
+type FetchFunction = (
+  action: FetchAction
+) => IterableIterator<Promise<FetchedRepo[]> | PutEffect<FetchSuccessAction> | PutEffect<FetchErrorAction>>
+
+const fetch: FetchFunction = function*({ repos }) {
   try {
     const results = yield fetchRepos(repos)
     yield put(fetchSuccess(results))
@@ -11,6 +22,6 @@ function* handleFetch({ repos }: any) {
   }
 }
 
-export default function*() {
-  yield takeLeading(Action.FETCH, handleFetch)
+export default function*(): IterableIterator<ForkEffect> {
+  yield takeLeading(ActionType.FETCH, fetch)
 }

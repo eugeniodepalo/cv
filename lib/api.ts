@@ -1,7 +1,14 @@
 import Octokit from '@octokit/rest'
+import { Repo } from '~/cv/data/repos'
+
+export interface FetchedRepo extends Repo {
+  description: string
+  websiteUrl: string
+}
+
 const octokit = new Octokit()
 
-const fetchRepo = async (repo: any) => {
+const fetchRepo = async (repo: Repo): Promise<FetchedRepo> => {
   const [owner, name] = repo.name.split('/')
 
   const {
@@ -19,6 +26,4 @@ const fetchRepo = async (repo: any) => {
   }
 }
 
-const fetchRepos = async (repos: any) => Promise.all(repos.map(fetchRepo))
-
-export { fetchRepos }
+export const fetchRepos = async (repos: Repo[]): Promise<FetchedRepo[]> => Promise.all(repos.map(fetchRepo))

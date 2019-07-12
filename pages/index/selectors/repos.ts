@@ -1,3 +1,6 @@
-export const getRepos = (s: any) => s.repos.results
-export const getIsFetchingRepos = (s: any) => s.repos.isFetching
-export const getReposError = (s: any) => s.repos.error
+import { State } from '../reducer'
+import { FetchedRepo } from '~/api'
+
+export const getRepos = (s: State): FetchedRepo[] => s.repos.results
+export const getIsFetchingRepos = (s: State): boolean => s.repos.isFetching
+export const getReposError = (s: State): Error => s.repos.error

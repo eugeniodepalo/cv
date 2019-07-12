@@ -1,5 +1,5 @@
 import Header from './Header'
 import PositionItem from './PositionItem'
-import EntityItem from './EntityItem'
+import LinkableItem from './LinkableItem'
 
-export { Header, PositionItem, EntityItem }
+export { Header, PositionItem, LinkableItem }

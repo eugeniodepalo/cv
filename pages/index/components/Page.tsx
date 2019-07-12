@@ -1,14 +1,14 @@
-import styled from 'styled-components'
 import { Component } from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 import { Box } from '@rebass/grid'
 import { transparentize } from 'polished'
-import { StickyContainer, Sticky } from 'react-sticky'
+import { StickyContainer, Sticky, StickyChildArgs } from 'react-sticky'
 import { Layout, Section, Link } from '~/components'
-import { Header, PositionItem, EntityItem } from './Page/'
-import { positions, projects } from '../cv/data'
+import { positions, projects } from '~/cv/data'
+import { Header, PositionItem, LinkableItem } from './Page/'
 import { getRepos, getIsFetchingRepos, getReposError } from '../selectors/repos'
-import { fetch as fetchRepos } from '../actions/repos'
+import { fetch as fetchReposAction } from '../actions/repos'
 
 const Container = styled.div`
   border-top: 6px solid #333;
@@ -28,7 +28,7 @@ const Error = styled.div`
   color: ${(props) => props.theme.errorColor};
 `
 
-const stickyContent = ({ style, isSticky }: any) => (
+const stickyContent = ({ style, isSticky }: StickyChildArgs) => (
   <div style={style}>
     <StickyWrapper>
       <Box pb={isSticky ? 0 : 3}>
@@ -42,10 +42,13 @@ const stickyContent = ({ style, isSticky }: any) => (
 
 const Page = class extends Component<any> {
   public componentDidMount() {
-    this.props.fetchRepos()
+    const { fetchRepos } = this.props
+    fetchRepos()
   }
 
   public render() {
+    const { reposError, isFetchingRepos, repos } = this.props
+
     return (
       <Layout title="CV">
         <Box mb={3}>
@@ -59,14 +62,14 @@ const Page = class extends Component<any> {
                   ))}
                 </Section>
                 <Section title="Repos" id="repos" pt={0}>
-                  {this.props.reposError && <Error>There was an error fetching repos.</Error>}
-                  {this.props.isFetchingRepos
+                  {reposError && <Error>There was an error fetching repos.</Error>}
+                  {isFetchingRepos
                     ? 'Fetching repos...'
-                    : (this.props.repos || []).map((r: any) => <EntityItem entity={r} key={r.id} />)}
+                    : (repos || []).map((r: any) => <LinkableItem entity={r} key={r.id} />)}
                 </Section>
                 <Section title="Projects" id="projects">
                   {projects.map((p) => (
-                    <EntityItem entity={p} key={p.id} />
+                    <LinkableItem entity={p} key={p.id} />
                   ))}
                 </Section>
               </main>
@@ -87,7 +90,7 @@ const mapStateToProps = (state: any) => ({
   reposError: getReposError(state)
 })
 
-const mapDispatchToProps = { fetchRepos }
+const mapDispatchToProps = { fetchRepos: fetchReposAction }
 
 export default connect(
   mapStateToProps,

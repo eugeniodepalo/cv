@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux'
 import reposReducer from './reducers/repos'
 
-export default combineReducers({
+const reducer = combineReducers({
   repos: reposReducer
 })
+
+export type State = ReturnType<typeof reducer>
+export default reducer

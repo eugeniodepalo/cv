@@ -30,6 +30,8 @@
     "@rebass/hide": "^1.0.0-2",
     "@zeit/next-typescript": "^1.1.1",
     "babel-plugin-styled-components": "^1.10.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "immutability-helper": "^3.0.0",
     "install": "^0.12.2",
     "jest": "^24.8.0",
@@ -62,8 +64,6 @@
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "babel-eslint": "^10.0.1",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.2.0",
@@ -75,6 +75,6 @@
     "eslint-plugin-react": "^7.12.4",
     "husky": "^2.1.0",
     "prettier": "^1.17.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.3"
   }
 }
