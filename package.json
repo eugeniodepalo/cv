@@ -25,7 +25,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "now-build": "yarn build",
+    "now-build": "yarn test && yarn build",
     "test": "eslint --ext js,ts,jsx,tsx . && tsc && jest"
   },
   "dependencies": {
