@@ -21,12 +21,12 @@ interface StateProps {
   reposError: Error
 }
 
-interface ActionProps {
+interface DispatchProps {
   fetchRepos: ActionCreator<FetchAction>
 }
 
-interface Props extends StateProps, ActionProps {
-  store: Store<State>
+interface Props extends StateProps, DispatchProps {
+  store?: Store<State>
 }
 
 const Container = styled.div`
@@ -109,9 +109,9 @@ const mapStateToProps = (state: State): StateProps => ({
   reposError: getReposError(state)
 })
 
-const mapDispatchToProps: ActionProps = { fetchRepos: fetchReposAction }
+const mapDispatchToProps: DispatchProps = { fetchRepos: fetchReposAction }
 
-export default connect<StateProps, ActionProps>(
+export default connect<StateProps, DispatchProps>(
   mapStateToProps,
   mapDispatchToProps
 )(Page)
