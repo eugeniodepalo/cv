@@ -7,6 +7,10 @@ export interface Repo {
 
 export default buildEntities<Repo>([
   {
+    name: 'eugeniodepalo/cv',
+    techs: ['react', 'typescript', 'redux', 'saga', 'styled-components', 'next', 'jest', 'enzyme']
+  },
+  {
     name: 'calderalabs/ember-calendar',
     techs: ['ember', 'qunit']
   },
