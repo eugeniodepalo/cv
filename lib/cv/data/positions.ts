@@ -72,7 +72,7 @@ export default buildEntities<Position>([
         'repair appointments with Ember, integrating with a JSON API back-end',
       'Builds each step of the form to be pixel-perfect and responsive according to provided designs',
       'Implements A/B tests with AEM and ember-islands',
-      'Works on a tight deadline and presents weekly demos to stakeholders.'
+      'Works on a tight deadline and presents weekly demos to stakeholders'
     ]
   },
   {
@@ -118,7 +118,7 @@ export default buildEntities<Position>([
     role: 'Senior Front-end Developer',
     techs: ['ember', 'qunit', 'sass'],
     process: ['jira', 'scrum', 'standups', 'retros'],
-    description: 'Works on Kayako, a CRM system built with Ember',
+    description: 'Works on Kayako, a CRM system built with Ember.',
     highlights: [
       'Implements the UI to build custom forms for the customer support dashboard',
       'Builds generic components to render form fields based on a JSON spec provided by the back-end'
@@ -153,8 +153,8 @@ export default buildEntities<Position>([
       'Implements a custom grid layouting algorithm based on ' +
         'Packery.js and ember-collection that maximizes used screen space',
       'Implements client-side indexed search of thousands of items and products with Lunr.js',
-      'Builds a custom CMS to provide data for all the pages with Ember/Firebase/Firebase Auth.',
-      'Sets up a deployment pipeline with S3, CloudFront and ember-cli-deploy.'
+      'Builds a custom CMS to provide data for all the pages with Ember/Firebase/Firebase Auth',
+      'Sets up a deployment pipeline with S3, CloudFront and ember-cli-deploy'
     ]
   },
   {
@@ -172,7 +172,7 @@ export default buildEntities<Position>([
       'Coaches junior devs introducing them to Ember.js',
       'Implements reusable components and test helpers to mantain a consistent style',
       'Extracts part of the work as open source, releasing and maintaining ember-calendar and ember-scrollable',
-      'Implements a custom ember-simple-auth plugin to authenticate with Google Javascript API.'
+      'Implements a custom ember-simple-auth plugin to authenticate with Google Javascript API'
     ]
   },
   {
