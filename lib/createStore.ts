@@ -8,7 +8,9 @@ interface CreateStoreFunction {
 
 const createStore: CreateStoreFunction = (reducer, initialState, saga) => {
   const sagaMiddleware = createSagaMiddleware()
+
   const store = reduxCreateStore(reducer, initialState, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+
   sagaMiddleware.run(saga)
   return store
 }

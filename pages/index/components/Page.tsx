@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { Component, ReactNode, ReactElement } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import { Box } from '@rebass/grid'
@@ -9,6 +9,14 @@ import { positions, projects } from '~/cv/data'
 import { Header, PositionItem, LinkableItem } from './Page/'
 import { getRepos, getIsFetchingRepos, getReposError } from '../selectors/repos'
 import { fetch as fetchReposAction } from '../actions/repos'
+import { State } from '../reducer'
+import { FetchedRepo } from '~/api'
+
+interface Props {
+  repos: FetchedRepo[]
+  isFetchingRepos: boolean
+  reposError: Error
+}
 
 const Container = styled.div`
   border-top: 6px solid #333;
@@ -28,7 +36,7 @@ const Error = styled.div`
   color: ${(props) => props.theme.errorColor};
 `
 
-const stickyContent = ({ style, isSticky }: StickyChildArgs) => (
+const stickyContent = ({ style, isSticky }: StickyChildArgs): ReactElement => (
   <div style={style}>
     <StickyWrapper>
       <Box pb={isSticky ? 0 : 3}>
@@ -41,12 +49,12 @@ const stickyContent = ({ style, isSticky }: StickyChildArgs) => (
 )
 
 const Page = class extends Component<any> {
-  public componentDidMount() {
+  public componentDidMount(): void {
     const { fetchRepos } = this.props
     fetchRepos()
   }
 
-  public render() {
+  public render(): ReactNode {
     const { reposError, isFetchingRepos, repos } = this.props
 
     return (
@@ -84,7 +92,7 @@ const Page = class extends Component<any> {
   }
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: State): Props => ({
   repos: getRepos(state),
   isFetchingRepos: getIsFetchingRepos(state),
   reposError: getReposError(state)

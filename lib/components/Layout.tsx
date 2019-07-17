@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 import { Box } from '@rebass/grid'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 
 interface Props {
   title: string
@@ -12,7 +12,7 @@ const Container = styled(Box)`
   font-family: courier;
 `
 
-const Layout: FunctionComponent<Props> = ({ title, children }) => (
+const Layout: FunctionComponent<Props> = ({ title, children }): ReactElement => (
   <Container mx="auto" my={[0, 0, 4]}>
     <Head>
       <title>Eugenio Depalo - {title}</title>

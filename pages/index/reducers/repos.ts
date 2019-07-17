@@ -14,7 +14,7 @@ const fetch = (state: State): State =>
     isFetching: { $set: true }
   })
 
-const fetchSuccess = (state: State, results: FetchedRepo[]) =>
+const fetchSuccess = (state: State, results: FetchedRepo[]): State =>
   update(state, {
     $merge: {
       isFetching: false,
@@ -23,7 +23,7 @@ const fetchSuccess = (state: State, results: FetchedRepo[]) =>
     }
   })
 
-const fetchError = (state: State, error?: Error) =>
+const fetchError = (state: State, error?: Error): State =>
   update(state, {
     $merge: {
       isFetching: false,
@@ -37,7 +37,7 @@ const initialState: State = {
   isFetching: false
 }
 
-const reducer: Reducer<State, Action> = (state: State = initialState, action: Action) => {
+const reducer: Reducer<State, Action> = (state = initialState, action): State => {
   switch (action.type) {
     case ActionType.FETCH:
       return fetch(state)

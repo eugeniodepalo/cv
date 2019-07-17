@@ -7,13 +7,13 @@ interface Props extends RenderPageResponse {
 }
 
 export default class Document extends NextDocument<Props> {
-  public static getInitialProps({ renderPage }: NextDocumentContext) {
+  public static getInitialProps({ renderPage }: NextDocumentContext): Props {
     const styleSheet = new ServerStyleSheet()
     const page = renderPage((App: any) => (props: any) => styleSheet.collectStyles(<App {...props} />))
     return { ...page, styleElement: styleSheet.getStyleElement() }
   }
 
-  public render() {
+  public render(): ReactNode {
     return (
       <html lang="en">
         <Head>{this.props.styleElement}</Head>

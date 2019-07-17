@@ -17,8 +17,26 @@ module.exports = {
     semi: ['error', 'never'],
     'comma-dangle': ['error', 'never'],
     'arrow-parens': ['error', 'always'],
-    'operator-linebreak': ['error', 'after'],
-    'import/prefer-default-export': 'off'
+    'operator-linebreak': 'off',
+    'import/prefer-default-export': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'object-curly-newline': 'off',
+    'func-names': ['error', 'as-needed', { generators: 'as-needed' }],
+    'generator-star-spacing': [
+      'error',
+      {
+        before: false,
+        after: false
+      }
+    ],
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always'
+      }
+    ]
   },
   overrides: [
     {
@@ -28,14 +46,29 @@ module.exports = {
         indent: 'off',
         '@typescript-eslint/indent': ['error', 2],
         '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/member-delimiter-style': ['error', 'none'],
+        '@typescript-eslint/no-empty-interface': 'off',
+        '@typescript-eslint/member-delimiter-style': [
+          'error',
+          {
+            multiline: {
+              delimiter: 'none',
+              requireLast: false
+            },
+            singleline: {
+              delimiter: 'semi',
+              requireLast: false
+            }
+          }
+        ],
         '@typescript-eslint/explicit-function-return-type': [
           'error',
           {
             allowExpressions: true,
+            allowTypedFunctionExpressions: true,
             allowHigherOrderFunctions: true
           }
-        ]
+        ],
+        'react/prop-types': 'off'
       }
     }
   ]

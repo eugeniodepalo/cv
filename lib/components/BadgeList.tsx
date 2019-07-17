@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { lighten } from 'polished'
 import { Flex, Box } from '@rebass/grid'
-import { FunctionComponent } from 'react'
+import { FunctionComponent, ReactElement } from 'react'
 
 interface Props {
   values: string[]
@@ -15,7 +15,7 @@ const Badge = styled.div`
   background-color: ${(props) => lighten(0.2, props.theme.activeColor)};
 `
 
-const BadgeList: FunctionComponent<Props> = ({ values }) => (
+const BadgeList: FunctionComponent<Props> = ({ values }): ReactElement => (
   <Content flexWrap="wrap">
     {values.map((value: any) => (
       <Box mr={1} mb={1} key={value}>

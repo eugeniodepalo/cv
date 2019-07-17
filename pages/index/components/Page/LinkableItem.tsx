@@ -1,6 +1,6 @@
+import { FunctionComponent } from 'react'
 import { Box, Flex } from '@rebass/grid'
 import { Link, BadgeList } from '~/components'
-import { FunctionComponent } from 'react'
 import { Project } from '~/cv/data/projects'
 import { FetchedRepo } from '~/api'
 

@@ -1,9 +1,9 @@
+import { FunctionComponent } from 'react'
 import styled from 'styled-components'
 import { Box, Flex } from '@rebass/grid'
 import { Hide } from '@rebass/hide'
 import { Link } from '~/components'
 import { info } from '~/cv/data'
-import { FunctionComponent } from 'react'
 
 interface Props {
   isSticky: boolean

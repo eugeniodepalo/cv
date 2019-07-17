@@ -1,4 +1,4 @@
-import { Component, ComponentType } from 'react'
+import { Component, ComponentType, ComponentClass, ReactElement } from 'react'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'
 
@@ -12,7 +12,10 @@ interface State<S> {
 
 type CreateStoreFunction<S> = (initialState?: S) => Store<S>
 
-export default function<S>(createStore: CreateStoreFunction<S>, Page: ComponentType) {
+export default function<S>(
+  createStore: CreateStoreFunction<S>,
+  Page: ComponentType
+): ComponentClass<Props<S>, State<S>> {
   return class extends Component<Props<S>, State<S>> {
     public static async getInitialProps(): Promise<Props<S>> {
       return { initialState: createStore().getState() }
@@ -23,7 +26,7 @@ export default function<S>(createStore: CreateStoreFunction<S>, Page: ComponentT
       this.state = { store: createStore(props.initialState) }
     }
 
-    public render() {
+    public render(): ReactElement {
       const { store } = this.state
 
       return (
