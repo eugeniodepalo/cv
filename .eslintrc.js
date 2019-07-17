@@ -22,6 +22,7 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'object-curly-newline': 'off',
     'func-names': ['error', 'as-needed', { generators: 'as-needed' }],
+    'function-paren-newline': 'off',
     'generator-star-spacing': [
       'error',
       {
