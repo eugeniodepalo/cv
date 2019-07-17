@@ -1,7 +1,7 @@
-import * as moment from 'moment'
+import moment, { Moment } from 'moment'
 import buildEntities from '../buildEntities'
 
-const date = (value: string): moment.Moment => moment(value, 'DD/MM/YYYY')
+const date = (value: string): Moment => moment(value, 'DD/MM/YYYY')
 
 export enum TeamSize {
   Small,

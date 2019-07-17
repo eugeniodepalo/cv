@@ -17,7 +17,7 @@ const Badge = styled.div`
 
 const BadgeList: FunctionComponent<Props> = ({ values }): ReactElement => (
   <Content flexWrap="wrap">
-    {values.map((value: any) => (
+    {values.map((value) => (
       <Box mr={1} mb={1} key={value}>
         <Badge>{value}</Badge>
       </Box>

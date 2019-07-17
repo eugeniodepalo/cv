@@ -1,5 +1,5 @@
 import { Fragment, FunctionComponent } from 'react'
-import * as moment from 'moment'
+import moment from 'moment'
 import styled from 'styled-components'
 import { Flex, Box } from '@rebass/grid'
 import { lighten } from 'polished'

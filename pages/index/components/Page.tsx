@@ -1,21 +1,32 @@
 import { Component, ReactNode, ReactElement } from 'react'
 import { connect } from 'react-redux'
+import { ActionCreator, Store } from 'redux'
 import styled from 'styled-components'
 import { Box } from '@rebass/grid'
 import { transparentize } from 'polished'
 import { StickyContainer, Sticky, StickyChildArgs } from 'react-sticky'
 import { Layout, Section, Link } from '~/components'
 import { positions, projects } from '~/cv/data'
+import { Project } from '~/cv/data/projects'
+import { Entity } from '~/cv/buildEntities'
 import { Header, PositionItem, LinkableItem } from './Page/'
 import { getRepos, getIsFetchingRepos, getReposError } from '../selectors/repos'
-import { fetch as fetchReposAction } from '../actions/repos'
+import { fetch as fetchReposAction, FetchAction } from '../actions/repos'
 import { State } from '../reducer'
 import { FetchedRepo } from '~/api'
 
-interface Props {
+interface StateProps {
   repos: FetchedRepo[]
   isFetchingRepos: boolean
   reposError: Error
+}
+
+interface ActionProps {
+  fetchRepos: ActionCreator<FetchAction>
+}
+
+interface Props extends StateProps, ActionProps {
+  store: Store<State>
 }
 
 const Container = styled.div`
@@ -48,7 +59,7 @@ const stickyContent = ({ style, isSticky }: StickyChildArgs): ReactElement => (
   </div>
 )
 
-const Page = class extends Component<any> {
+const Page = class extends Component<Props> {
   public componentDidMount(): void {
     const { fetchRepos } = this.props
     fetchRepos()
@@ -73,7 +84,7 @@ const Page = class extends Component<any> {
                   {reposError && <Error>There was an error fetching repos.</Error>}
                   {isFetchingRepos
                     ? 'Fetching repos...'
-                    : (repos || []).map((r: any) => <LinkableItem entity={r} key={r.id} />)}
+                    : (repos || []).map((r: Entity & Project | FetchedRepo) => <LinkableItem entity={r} key={r.id} />)}
                 </Section>
                 <Section title="Projects" id="projects">
                   {projects.map((p) => (
@@ -92,15 +103,15 @@ const Page = class extends Component<any> {
   }
 }
 
-const mapStateToProps = (state: State): Props => ({
+const mapStateToProps = (state: State): StateProps => ({
   repos: getRepos(state),
   isFetchingRepos: getIsFetchingRepos(state),
   reposError: getReposError(state)
 })
 
-const mapDispatchToProps = { fetchRepos: fetchReposAction }
+const mapDispatchToProps: ActionProps = { fetchRepos: fetchReposAction }
 
-export default connect(
+export default connect<StateProps, ActionProps>(
   mapStateToProps,
   mapDispatchToProps
 )(Page)
