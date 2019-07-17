@@ -22,7 +22,7 @@ const LinkableItem: FunctionComponent<Props> = ({ entity }) => (
         </Link>
       </Box>
       <Box>
-        <h2>{entity.description}</h2>
+        <div>{entity.description}</div>
         <Box mt={1}>
           <BadgeList values={entity.techs} />
         </Box>

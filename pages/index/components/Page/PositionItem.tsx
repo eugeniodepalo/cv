@@ -10,7 +10,7 @@ interface Props {
   position: Position
 }
 
-interface DefinitionItemProps {
+interface InfoItemProps {
   label: string
   value?: string
 }
@@ -19,7 +19,7 @@ const Title = styled.h1`
   font-size: 1.5rem;
 `
 
-const DefinitionList = styled.dl`
+const Info = styled.dl`
   display: grid;
   column-gap: 1rem;
   row-gap: 0.25rem;
@@ -30,7 +30,11 @@ const Label = styled.div`
   background-color: ${(props) => lighten(0.7, props.theme.primaryColor)};
 `
 
-const DefinitionItem: FunctionComponent<DefinitionItemProps> = ({ label, value, children }) => (
+const Description = styled.strong`
+  font-weight: bold;
+`
+
+const InfoItem: FunctionComponent<InfoItemProps> = ({ label, value, children }) => (
   <Fragment>
     <dt>
       <Label>
@@ -64,20 +68,22 @@ const PositionItem: FunctionComponent<Props> = ({ position }: Props) => {
       </Box>
       <Flex flexWrap="wrap">
         <Box width={[1, 1, 4 / 12]} mb={[3, 0]}>
-          <DefinitionList>
-            <DefinitionItem label="Duration" value={duration} />
-            <DefinitionItem label="Role" value={position.role} />
-            <DefinitionItem label="Team Size" value={teamSizeToString(position.teamSize)} />
-            <DefinitionItem label="Techs">
+          <Info>
+            <InfoItem label="Duration" value={duration} />
+            <InfoItem label="Role" value={position.role} />
+            <InfoItem label="Team Size" value={teamSizeToString(position.teamSize)} />
+            <InfoItem label="Techs">
               <BadgeList values={position.techs} />
-            </DefinitionItem>
-            <DefinitionItem label="Process">
+            </InfoItem>
+            <InfoItem label="Process">
               <BadgeList values={position.process} />
-            </DefinitionItem>
-          </DefinitionList>
+            </InfoItem>
+          </Info>
         </Box>
         <Box width={[1, 1, 8 / 12]}>
-          <Box mb={3}>{position.description}</Box>
+          <Box mb={3}>
+            <Description>{position.description}</Description>
+          </Box>
           <ul>
             {position.highlights.map((highlight, index) => (
               <li key={index.toString()}>

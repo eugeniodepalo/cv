@@ -44,15 +44,23 @@ const Header: FunctionComponent<Props> = ({ isSticky }) => (
             </Box>
           </Box>
           <Box>
-            <Flex alignItems="end">
-              <Link href={`mailto:${info.email}`}>Email</Link>
-              <Link href={`https://github.com/${info.githubHandle}`} target="_blank">
-                GitHub
-              </Link>
-              <Link href={`https://linkedin.com/in/${info.linkedinHandle}`} target="_blank">
-                LinkedIn
-              </Link>
-            </Flex>
+            <nav>
+              <Flex alignItems="end" as="ul">
+                <li>
+                  <Link href={`mailto:${info.email}`}>Email</Link>
+                </li>
+                <li>
+                  <Link href={`https://github.com/${info.githubHandle}`} target="_blank">
+                    GitHub
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`https://linkedin.com/in/${info.linkedinHandle}`} target="_blank">
+                    LinkedIn
+                  </Link>
+                </li>
+              </Flex>
+            </nav>
           </Box>
         </Flex>
         {!isSticky && (
