@@ -45,17 +45,17 @@ export default buildEntities<Position>([
     process: ['jira', 'kanban', 'standups', 'retros'],
     description: 'Works on Smart Pension, a pension and investments management platform for companies and employees.',
     highlights: [
-      'Implements an animated and scrollable graph Ember component built on top of Graph.js',
-      'Implements a generic range date picker on top of ember-power-select',
-      'Implements a custom theming and white-labeling solution based on SASS, ember-intl and Broccoli.js',
       'Leads the technical effort in migrating all front-end apps from Materialize to Bootstrap',
       'Leads the technical effort in writing a generic UI component library with Ember ' +
         'as an in-repo addon, using Ember best practices (High-order components, DDAU, Immutability, modular BEM) ',
+      'Implements a custom theming and white-labeling solution based on SASS, ember-intl and Broccoli.js',
+      'Works on improving the stability of an internal app written in React ' +
+        'Redux and TypeScript tested with Jest and Enzyme',
+      'Implements an animated and scrollable graph Ember component built on top of Graph.js',
+      'Implements a generic range date picker on top of ember-power-select',
       'Defines and starts working on a roadmap to remove technical debt from all the apps ' +
         'including: Removing controllers in favour of services and route-components, angle bracket components ' +
-        'pods, integration tests, test selectors',
-      'Works on improving the stability of an internal app written in React ' +
-        'Redux and TypeScript tested with Jest and Enzyme'
+        'pods, integration tests, test selectors'
     ]
   },
   {
