@@ -23,6 +23,22 @@ export interface Position {
 
 export default buildEntities<Position>([
   {
+    name: 'Zapnito',
+    teamSize: TeamSize.Medium,
+    startDate: date('01/10/2019'),
+    endDate: date('01/01/2020'),
+    role: 'Senior Front-end Developer',
+    techs: ['ember', 'glimmer', 'typescript', 'rails', 'twilio', 'filestack', 'web-components'],
+    process: ['scrum', 'standups'],
+    description: 'Works on Zapnito, a knowledge network and online teaching platform built with Ember.js.',
+    highlights: [
+      'Works on a greenfield rewrite of Panels, a video multi-conference tool built ' +
+        'for the private networks of Zapnito, using Ember (with TypeScript), twilio-video.js and twilio-ruby',
+      'Works on adding a Glimmer app that exposes web components to the parent Rails app, ' +
+        'including a file uploader built on top of Filestack'
+    ]
+  },
+  {
     name: 'Smart Pension',
     teamSize: TeamSize.Medium,
     startDate: date('01/01/2019'),
